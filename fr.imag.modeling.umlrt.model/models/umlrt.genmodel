@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/fr.imag.modeling.umlrt.model/src" modelPluginID="fr.imag.modeling.umlrt.model"
+    modelName="Umlrt" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>umlrt.ecore</foreignModel>
+  <genPackages prefix="UMLRT" disposableProviderFactory="true" ecorePackage="umlrt.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="umlrt.ecore#//PseudoStateType">
+      <genEnumLiterals ecoreEnumLiteral="umlrt.ecore#//PseudoStateType/Initial"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="umlrt.ecore#//TransitionKind">
+      <genEnumLiterals ecoreEnumLiteral="umlrt.ecore#//TransitionKind/external"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="umlrt.ecore#//PseudoStateKind"/>
+    <genClasses ecoreClass="umlrt.ecore#//Model">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference umlrt.ecore#//Model/capsules"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//Model/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference umlrt.ecore#//Model/top"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference umlrt.ecore#//Model/protocol"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference umlrt.ecore#//Model/inputMessage"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference umlrt.ecore#//Model/activeCapsule"/>
+    </genClasses>
+    <genClasses ecoreClass="umlrt.ecore#//Capsule">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference umlrt.ecore#//Capsule/parts"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference umlrt.ecore#//Capsule/ports"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//Capsule/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference umlrt.ecore#//Capsule/connector"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference umlrt.ecore#//Capsule/statemachine"/>
+    </genClasses>
+    <genClasses ecoreClass="umlrt.ecore#//CapsulePart">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference umlrt.ecore#//CapsulePart/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//CapsulePart/name"/>
+    </genClasses>
+    <genClasses ecoreClass="umlrt.ecore#//Port">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//Port/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//Port/isConjugated"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference umlrt.ecore#//Port/protocol"/>
+    </genClasses>
+    <genClasses ecoreClass="umlrt.ecore#//Connector">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference umlrt.ecore#//Connector/type"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference umlrt.ecore#//Connector/capsulepart"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference umlrt.ecore#//Connector/port"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//Connector/name"/>
+    </genClasses>
+    <genClasses ecoreClass="umlrt.ecore#//Protocol">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//Protocol/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference umlrt.ecore#//Protocol/out"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference umlrt.ecore#//Protocol/in"/>
+    </genClasses>
+    <genClasses ecoreClass="umlrt.ecore#//Message">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//Message/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//Message/content"/>
+    </genClasses>
+    <genClasses ecoreClass="umlrt.ecore#//StateMachine">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//StateMachine/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference umlrt.ecore#//StateMachine/region"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference umlrt.ecore#//StateMachine/currentState"/>
+    </genClasses>
+    <genClasses ecoreClass="umlrt.ecore#//State">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//State/name"/>
+    </genClasses>
+    <genClasses ecoreClass="umlrt.ecore#//Transition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//Transition/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//Transition/kind"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference umlrt.ecore#//Transition/destination"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference umlrt.ecore#//Transition/source"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//Transition/trigger"/>
+    </genClasses>
+    <genClasses ecoreClass="umlrt.ecore#//PseudoState">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//PseudoState/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//PseudoState/kind"/>
+    </genClasses>
+    <genClasses ecoreClass="umlrt.ecore#//Region">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//Region/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference umlrt.ecore#//Region/transition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference umlrt.ecore#//Region/state"/>
+    </genClasses>
+    <genClasses ecoreClass="umlrt.ecore#//Vertex">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference umlrt.ecore#//Vertex/intrans"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference umlrt.ecore#//Vertex/outtrans"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference umlrt.ecore#//Vertex/owningsm"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
