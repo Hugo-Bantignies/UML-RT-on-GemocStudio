@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<umlrt:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:umlrt="http://UML-RT/0.1" name="trafficlight" top="//@capsules.0">
+  <capsules name="Top">
+    <statemachine name="trafficsm">
+      <region name="trafficregion">
+        <transition name="togreen" destination="//@capsules.0/@statemachine/@region/@state.0" source="//@capsules.0/@statemachine/@region/@state.1" trigger="0"/>
+        <transition name="toorange" destination="//@capsules.0/@statemachine/@region/@state.2" source="//@capsules.0/@statemachine/@region/@state.0" trigger="1"/>
+        <transition name="tored" destination="//@capsules.0/@statemachine/@region/@state.3" source="//@capsules.0/@statemachine/@region/@state.2" trigger="2"/>
+        <transition name="togreenbis" destination="//@capsules.0/@statemachine/@region/@state.0" source="//@capsules.0/@statemachine/@region/@state.3" trigger="3"/>
+        <state xsi:type="umlrt:State" intrans="//@capsules.0/@statemachine/@region/@transition.0 //@capsules.0/@statemachine/@region/@transition.3" outtrans="//@capsules.0/@statemachine/@region/@transition.1" owningsm="//@capsules.0/@statemachine" name="green"/>
+        <state xsi:type="umlrt:PseudoState" outtrans="//@capsules.0/@statemachine/@region/@transition.0" owningsm="//@capsules.0/@statemachine" name="init"/>
+        <state xsi:type="umlrt:State" intrans="//@capsules.0/@statemachine/@region/@transition.1" outtrans="//@capsules.0/@statemachine/@region/@transition.2" owningsm="//@capsules.0/@statemachine" name="orange"/>
+        <state xsi:type="umlrt:State" intrans="//@capsules.0/@statemachine/@region/@transition.2" outtrans="//@capsules.0/@statemachine/@region/@transition.3" owningsm="//@capsules.0/@statemachine" name="red"/>
+      </region>
+    </statemachine>
+  </capsules>
+</umlrt:Model>
